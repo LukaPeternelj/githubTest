@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+    <a class ="btn btn-default" href="/">Back to Todos</a>
+    <br>
+
+
+
+
+
+{{ dump(vsi) }}
+
+    {% if vsi is defined %}
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Ime</th>
+                <th>Popust</th>
+                <th>Podrobnosti</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {%  for v in vsi %}
+            <tr>
+                <th>{{ v.id }}</th>
+                <th>{{ v.name }}</th>
+                <th>{{ v.category }}</th>
+                <th>{{ v.description }}</th>
+            </tr>
+            {%  endfor %}
+            </tbody>
+        </table>
+
+
+    {%  endif  %}
+
+
+
+
+
+
+{% endblock %}
